@@ -1,5 +1,5 @@
 if syn then
-    Players.LocalPlayer.OnTeleport:Connect(function(State)
+    game.Players.LocalPlayer.OnTeleport:Connect(function(State)
     	if State == Enum.TeleportState.Started then
     		if queueteleport then
     			queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Code1Tech/sfp_underdev/main/source.lua'))()")
@@ -18,10 +18,10 @@ if syn then
     	wait(1)
     end
     if #Players:GetPlayers() <= 1 then
-		Players.LocalPlayer:Kick('\nRejoining...')
+		game.Players.LocalPlayer:Kick('\nRejoining...')
 		wait()
-		TeleportService:Teleport(game.PlaceId, Players.LocalPlayer)
+		game.TeleportService:Teleport(game.PlaceId, Players.LocalPlayer)
 	else
-		TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
+		game.TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
 	end
 end
